@@ -31,3 +31,9 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+#Cloud9 IDE
+.c9
+
+#bower
+/app/3rdparty

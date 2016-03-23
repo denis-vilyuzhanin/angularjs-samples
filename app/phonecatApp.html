@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="phonecatApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Phone Catalog AngularJS Samples</title>
+
+    <link rel="stylesheet" href="3rdparty/bootstrap/dist/css/bootstrap.css">
+
+    <script src="3rdparty/jquery/dist/jquery.js"></script>
+    <script src="3rdparty/angular/angular.js"></script>
+    <script src="3rdparty/angular-animate/angular-animate.js"></script>
+    <script src="3rdparty/angular-route/angular-route.js"></script>
+    <script src="3rdparty/angular-resource/angular-resource.js"></script>
+
+    <script type="text/javascript" src="phonecatApp/controller.js"></script>
+</head>
+
+<body>
+    <div ng-controller="PhoneListCtrl">
+        <h1>Phone Catalog AngularJS Samples {{controllerId}}</h1> Search:
+        <input ng-model="query">
+        <select ng-model="orderProp">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+        </select>
+        <ul>
+            <li ng-repeat="phone in phones | filter:query | orderBy:orderProp">
+                <span>{{phone.name}}</span>
+                <p>{{phone.snippet}}</p>
+                <div>
+                    
+                </div>
+                <label ng-repeat-start="detail in phone.details" for="">{{detail.title}}</label>
+                <input ng-model="detail.value"/>
+                <br ng-repeat-end=""/>
+            </li>
+
+
+        </ul>
+        
+    
+    </div>
+
+</body>
+
+</html>
